@@ -35,9 +35,10 @@
                 a premium buzz with<br>
                 <span style="line-height: 65px;"></span><b><i>no sugar, low calories, and 100% fun.</i></b></span>
             </div>
-          
 
-            <button class="about_us_right_side_sub_sec_btn explore_btn" style="width: 370px;">Explore Our Flavours</button>
+
+            <button class="about_us_right_side_sub_sec_btn explore_btn" style="width: 370px;">Explore Our
+                Flavours</button>
             <div class="hero_mobile_img_container">
                 <img class="hero_bottle" src="images/mobile_img1.png" alt="hero_bottle1">
 
@@ -344,40 +345,39 @@
         });
 
 
+        const tabImages = document.querySelectorAll('.testimonials_tab_img');
+        const tabContents = document.querySelectorAll('.testimonials_tab_content');
+        let currentIndex = 0;
 
+        // Function to switch tabs
+        const switchTab = (index) => {
+            // Reset all tab images and hide all content sections
+            tabImages.forEach((img, i) => {
+                img.classList.remove('active');
+                img.src = 'images/testimonial_tab.svg'; // Reset to default
+                tabContents[i].style.display = 'none'; // Hide content
+            });
 
+            // Set the current tab as active
+            tabImages[index].classList.add('active');
+            tabImages[index].src = 'images/testimonial_tab_active.svg'; // Active image
+            tabContents[index].style.display = 'block'; // Show content
+        };
 
-        // const tabImages = document.querySelectorAll('.testimonials_tab_img');
-        // const tabContents = document.querySelectorAll('.testimonials_tab_content');
-        // let currentIndex = 0;
+        // Add click event listeners to tab images
+        tabImages.forEach((tabImg, index) => {
+            tabImg.addEventListener('click', () => {
+                currentIndex = index; // Update current index
+                switchTab(currentIndex);
+            });
+        });
 
-        // // Function to switch tabs
-        // const switchTab = (index) => {
-        //     // Reset all tab images and hide all content sections
-        //     tabImages.forEach((img, i) => {
-        //         img.classList.remove('active');
-        //         img.src = 'images/testimonial_tab.svg'; // Reset to default
-        //         tabContents[i].style.display = 'none'; // Hide content
-        //     });
+        // Automatically switch tabs every 3 seconds
+        setInterval(() => {
+            currentIndex = (currentIndex + 1) % tabImages.length;
+            switchTab(currentIndex);
+        }, 3000);
 
-        //     // Set the current tab as active
-        //     tabImages[index].classList.add('active');
-        //     tabImages[index].src = 'images/testimonial_tab_active.svg'; // Active image
-        //     tabContents[index].style.display = 'block'; // Show content
-        // };
-
-        // // Add click event listeners to tab images
-        // tabImages.forEach((tabImg, index) => {
-        //     tabImg.addEventListener('click', () => {
-        //         currentIndex = index; // Update current index
-        //         switchTab(currentIndex);
-        //     });
-        // });
-
-        // setInterval(() => {
-        //     currentIndex = (currentIndex + 1) % tabImages.length; 
-        //     switchTab(currentIndex);
-        // }, 3000);
 
     </script>
 </body>
