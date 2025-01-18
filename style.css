@@ -677,6 +677,12 @@ body {
 }
 
 @media (max-width: 480px) {
+  .flavours_tab_content.active{
+    display: flex !important;
+  }
+  .flavours_tab_content.inactive{
+    display: none;
+  }
   .flavours_tab_content {
     flex-wrap: nowrap;
     display: flex;
