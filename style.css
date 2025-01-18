@@ -574,7 +574,23 @@ body {
   justify-content: center;
   gap: 20px;
   margin-top: 20px;
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  transition: opacity 1s ease-in-out, visibility 0.3s ease-in-out;
+  pointer-events: none; 
 }
+
+.flavours_tab_content.active {
+  opacity: 1;
+  visibility: visible;
+  position: relative;
+  pointer-events: auto; /* Re-enable interaction for active content */
+}
+
 
 .flavours_tab_content_item {
   flex: 1 1 calc(25% - 20px);
@@ -788,6 +804,12 @@ body {
 }
 
 /* Media Queries for responsiveness */
+@media screen and (min-width: 1200px) {
+  .testimonials_tab_content_description{
+    min-height: 190px;
+  }
+  
+}
 @media screen and (max-width: 1200px) {
   .testimonials_group_section {
     flex-direction: column;

@@ -67,7 +67,8 @@
             </div>
         </div>
         <div class="about_us_left_side">
-            <img style="width: 90%;" class="about_us_left_side_img1" src="images/about_us_top.svg" alt="about_us_left_side_img">
+            <img style="width: 90%;" class="about_us_left_side_img1" src="images/about_us_top.svg"
+                alt="about_us_left_side_img">
         </div>
     </div>
 
@@ -86,7 +87,7 @@
             <button class="flavours_tab_btn" data-tab="french">Blended French</button>
             <button class="flavours_tab_btn" data-tab="imported">Imported</button>
         </div>
-        <div class="flavours_tab_content" id="premium">
+        <div class="flavours_tab_content active" id="premium">
             <div class="flavours_tab_content_item">
                 <img class="flavours_tab_content_item_img" src="images/60ml_green.svg" alt="premium">
                 <div class="flavours_tab_content_item_text">PINK GRAPEFRUIT <br>& LIME</div>
@@ -104,28 +105,29 @@
                 <div class="flavours_tab_content_item_text">ELDERFLOWERS <br>& BERRIES</div>
             </div>
         </div>
-        <div class="flavours_tab_content" id="french" style="display: none;">
+        <div class="flavours_tab_content" id="french">
             <div class="flavours_tab_content_item">
                 <img class="flavours_tab_content_item_img" src="images/60ml_pink.svg" alt="premium">
                 <div class="flavours_tab_content_item_text">LYCHEE <br>& CINNAMON</div>
             </div>
             <div class="flavours_tab_content_item">
-                <img class="flavours_tab_content_item_img" src="images/60ml_orange.svg" alt="premium">
-                <div class="flavours_tab_content_item_text">MANDARIN <br>& LIME</div>
-            </div>
-            <div class="flavours_tab_content_item">
-                <img class="flavours_tab_content_item_img" src="images/60ml_blue.svg" alt="premium">
-                <div class="flavours_tab_content_item_text">ELDERFLOWERS <br>& BERRIES</div>
-            </div>
-            <div class="flavours_tab_content_item">
                 <img class="flavours_tab_content_item_img" src="images/60ml_green.svg" alt="premium">
                 <div class="flavours_tab_content_item_text">PINK GRAPEFRUIT <br>& LIME</div>
             </div>
+            <div class="flavours_tab_content_item">
+                <img class="flavours_tab_content_item_img" src="images/60ml_orange.svg" alt="premium">
+                <div class="flavours_tab_content_item_text">MANDARIN <br>& LIME</div>
+            </div>
+            <!-- <div class="flavours_tab_content_item">
+                <img class="flavours_tab_content_item_img" src="images/60ml_blue.svg" alt="premium">
+                <div class="flavours_tab_content_item_text">ELDERFLOWERS <br>& BERRIES</div>
+            </div>
+            -->
 
 
 
         </div>
-        <div class="flavours_tab_content" id="imported" style="display: none;">
+        <div class="flavours_tab_content" id="imported">
             <div class="flavours_tab_content_item">
                 <img class="flavours_tab_content_item_img" src="images/60ml_orange.svg" alt="premium">
                 <div class="flavours_tab_content_item_text">MANDARIN <br>& LIME</div>
@@ -139,10 +141,10 @@
                 <img class="flavours_tab_content_item_img" src="images/60ml_green.svg" alt="premium">
                 <div class="flavours_tab_content_item_text">PINK GRAPEFRUIT <br>& LIME</div>
             </div>
-            <div class="flavours_tab_content_item">
+            <!-- <div class="flavours_tab_content_item">
                 <img class="flavours_tab_content_item_img" src="images/60ml_pink.svg" alt="premium">
                 <div class="flavours_tab_content_item_text">LYCHEE <br>& CINNAMON</div>
-            </div>
+            </div> -->
 
 
         </div>
@@ -223,8 +225,7 @@
                         <div class="testimonials_tab_content" id="tab-1">
                             <div class="testimonials_tab_content_description">
                                 Swigger transformed our house party into an unforgettable experience! The flavors
-                                are so
-                                unique and refreshing, and the convenience of ready-to-chug shots made everything
+                                are so unique and refreshing, and the convenience of ready-to-chug shots made everything
                                 hassle-free.
                             </div>
                             <div class="testimonials_tab_content_auther">– Priya Sharma, Mumbai</div>
@@ -232,8 +233,7 @@
                         <div class="testimonials_tab_content" id="tab-2" style="display: none;">
                             <div class="testimonials_tab_content_description">
                                 Our corporate event was a hit thanks to Swigger! Everyone loved the premium flavors,
-                                and
-                                it added a touch of fun to the occasion.
+                                and it added a touch of fun to the occasion.
                             </div>
                             <div class="testimonials_tab_content_auther">– Neil Kamal, Banglore</div>
                         </div>
@@ -273,7 +273,8 @@
             </div>
         </div>
         <div class="about_us_left_side">
-            <img width="90%" class="about_us_left_side_img1" src="images/about_us_bottom.svg" alt="about_us_left_side_img">
+            <img width="90%" class="about_us_left_side_img1" src="images/about_us_bottom.svg"
+                alt="about_us_left_side_img">
         </div>
     </div>
     </div>
@@ -330,39 +331,55 @@
             button.addEventListener('click', () => {
                 // Remove active class from all buttons
                 buttons.forEach(btn => btn.classList.remove('flavours_tab_btn_active'));
-                // Hide all content sections
-                contents.forEach(content => (content.style.display = 'none'));
+
+                // Remove active class from all content sections
+                contents.forEach(content => content.classList.remove('active'));
 
                 // Add active class to the clicked button
                 button.classList.add('flavours_tab_btn_active');
+
                 // Show the corresponding content section
                 const tabId = button.getAttribute('data-tab');
-                document.getElementById(tabId).style.display = 'flex';
+                document.getElementById(tabId).classList.add('active');
             });
         });
+
+
+
 
 
         const tabImages = document.querySelectorAll('.testimonials_tab_img');
         const tabContents = document.querySelectorAll('.testimonials_tab_content');
+        let currentIndex = 0;
 
-        tabImages.forEach(tabImg => {
+        // Function to switch tabs
+        const switchTab = (index) => {
+            // Reset all tab images and hide all content sections
+            tabImages.forEach((img, i) => {
+                img.classList.remove('active');
+                img.src = 'images/testimonial_tab.svg'; // Reset to default
+                tabContents[i].style.display = 'none'; // Hide content
+            });
+
+            // Set the current tab as active
+            tabImages[index].classList.add('active');
+            tabImages[index].src = 'images/testimonial_tab_active.svg'; // Active image
+            tabContents[index].style.display = 'block'; // Show content
+        };
+
+        // Add click event listeners to tab images
+        tabImages.forEach((tabImg, index) => {
             tabImg.addEventListener('click', () => {
-                // Reset all tab images and hide all content sections
-                tabImages.forEach(img => {
-                    img.classList.remove('active');
-                    img.src = 'images/testimonial_tab.svg'; // Reset to default
-                });
-                tabContents.forEach(content => (content.style.display = 'none'));
-
-                // Set the clicked tab as active
-                tabImg.classList.add('active');
-                tabImg.src = 'images/testimonial_tab_active.svg'; // Change to active image
-
-                // Show the corresponding content section
-                const tabId = tabImg.getAttribute('data-tab');
-                document.getElementById(`tab-${tabId}`).style.display = 'block';
+                currentIndex = index; // Update current index
+                switchTab(currentIndex);
             });
         });
+
+        // Auto-switch tabs every 3 seconds
+        setInterval(() => {
+            currentIndex = (currentIndex + 1) % tabImages.length; // Move to the next tab
+            switchTab(currentIndex);
+        }, 3000);
     </script>
 </body>
 
