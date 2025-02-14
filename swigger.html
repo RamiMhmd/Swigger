@@ -12,15 +12,68 @@
     <link href='https://fonts.googleapis.com/css?family=Thasadith' rel='stylesheet'>
     <link href="https://fonts.googleapis.com/css2?family=Delius&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://db.onlinewebfonts.com/c/b114b008a1b67c0cc05145e445d1d19c?family=Core+Sans+N+SC+W01+75+ExtraBold">
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
         rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Swiper JS -->
     <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"> -->
 </head>
 
 <body>
     <!-- Main Content Container-->
+
+
+    <nav class="navbar navbar-light home-nav">
+        <div class="container-fluid">
+
+            <!-- Navbar Links (Visible on Desktop) -->
+            <div class="d-none d-md-flex ms-auto">
+                <ul class="navbar-nav flex-row">
+                    <li class="nav-item">
+                        <a class="nav-link px-3" href="#">HOME</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link px-3" href="#">ARTICLES</a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Hamburger Button (Visible in Mobile Only) -->
+            <button class="navbar-toggler d-md-none ms-auto" type="button" data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Offcanvas Drawer (Visible in Mobile Only) -->
+            <div class="offcanvas offcanvas-start d-md-none" tabindex="-1" id="offcanvasNavbar"
+                aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Menu</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">HOME</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">ARTICLES</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+
+
     <!-- <div class="container"> -->
 
     <!-- HERO SECTION START -->
@@ -31,14 +84,14 @@
             <div class="hero_center_title"><span> <img class="hero_arrow" src="images/arrow.svg"
                         alt="hero_bottle1"></span>Anytime<br> Anywhere!!</div>
             <div class="hero_center_subtitle">
-                India’s first ready-to-chug, all-natural, double alcohol shots. Conveniently crafted to deliver
-                a premium buzz with<br>
-                <span style="line-height: 65px;"></span><b><i>no sugar, low calories, and 100% fun.</i></b></span>
+                India’s first, In-fact World’s First All natural Premium <br>multi-spirit based ready-to-chug, double
+                alcohol shots.<br> Concocted to inspire fun<br>
+
             </div>
 
 
-            <button class="about_us_right_side_sub_sec_btn explore_btn" style="width: 370px;">Explore Our
-                Flavours</button>
+            <button class="about_us_right_side_sub_sec_btn explore_btn" style="width: 370px;"> Chug our
+                flavours</button>
             <div class="hero_mobile_img_container">
                 <img class="hero_bottle" src="images/mobile_img1.png" alt="hero_bottle1">
 
@@ -78,9 +131,9 @@
 
 
 
-    <div class="flavours_container">
+    <div class="flavours_container" id="flavours-section">
         <div class="flavours_header">
-            <div class="flavours_header_title">Swigger has you covered.</div>
+            <!-- <div class="flavours_header_title">Swigger has you covered.</div> -->
             <div class="flavours_header_subtitle">A Flavour for Every Mood</div>
         </div>
         <div class="flavours_tab">
@@ -198,7 +251,7 @@
                 <div class="why_choose_us_sub2_img_row">
                     <img class="why_choose_us_sub2_img" alt="Decorative Image"
                         src="images/why-choose-use-right-img.png">
-                    <div class="why_choose_us_sub2_img_text">?</div>
+                    <!-- <div class="why_choose_us_sub2_img_text">?</div> -->
                 </div>
             </div>
         </div>
@@ -261,7 +314,7 @@
     <!-- ABOUT US START-->
 
 
-    <div class="about_us_container">
+    <!-- <div class="about_us_container">
         <div class="about_us_right_side">
             <div class="about_us_right_side_title">Find Swigger Near You</div>
             <div class="about_us_right_side_sub_sec">
@@ -277,9 +330,45 @@
                 alt="about_us_left_side_img">
         </div>
     </div>
-    </div>
+    </div> -->
 
     <!-- </div> -->
+
+    <!-- GALLERY START-->
+    <div class="gallery-container">
+        <div class="gallery-header">
+            Join Us on Instagram
+        </div>
+        <div class="gallery-divider"></div>
+        <div class="gallery-username-section">
+            <div class="gallery-profile">
+                <img class="gallery-profile-img" src="images/gallery_user-profile.svg" alt="profile-img">
+                <span class="gallery-username">@swiggershots</span>
+                <img class="gallery-badge" src="images/Verified.svg" alt="profile-img">
+            </div>
+            <button class="gallery-follow-btn" id="followBtn">Follow us</button>
+        </div>
+    </div>
+    <div class="gallery-slider-container">
+        <div class="swiper gallery-slider">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide"><img src="images/g1.png" alt="Gallery Image 1"></div>
+                <div class="swiper-slide"><img src="images/g2.png" alt="Gallery Image 2"></div>
+                <div class="swiper-slide"><img src="images/g3.png" alt="Gallery Image 3"></div>
+                <div class="swiper-slide"><img src="images/g4.png" alt="Gallery Image 4"></div>
+                <div class="swiper-slide"><img src="images/g1.png" alt="Gallery Image 5"></div>
+                <div class="swiper-slide"><img src="images/g2.png" alt="Gallery Image 6"></div>
+                <div class="swiper-slide"><img src="images/g3.png" alt="Gallery Image 3"></div>
+                <div class="swiper-slide"><img src="images/g4.png" alt="Gallery Image 4"></div>
+            </div>
+
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+
+    <div class="gallery-hash-tag">#allnaturalflavours </div>
+
+
 
 
     <!-- FOOTER START-->
@@ -322,7 +411,6 @@
     <!-- FOOTER END-->
     </div>
     <!-- End Main Content Container -->
-
     <script>
         const buttons = document.querySelectorAll('.flavours_tab_btn');
         const contents = document.querySelectorAll('.flavours_tab_content');
@@ -377,6 +465,39 @@
             currentIndex = (currentIndex + 1) % tabImages.length;
             switchTab(currentIndex);
         }, 3000);
+
+
+        const exploreButton = document.querySelector('.explore_btn');
+        const flavoursSection = document.getElementById('flavours-section');
+
+        // Add a click event listener to the button
+        exploreButton.addEventListener('click', () => {
+            // Scroll to the flavours section smoothly
+            flavoursSection.scrollIntoView({ behavior: 'smooth' });
+        });
+
+        document.addEventListener("DOMContentLoaded", function () {
+            var swiper = new Swiper(".gallery-slider", {
+                slidesPerView: 1,  // Mobile: 1 image
+                spaceBetween: 10,
+                loop: true,
+                pagination: {
+                    el: ".swiper-pagination",
+                    clickable: true,
+                },
+                navigation: {
+                    nextEl: ".swiper-button-next",
+                    prevEl: ".swiper-button-prev",
+                },
+                breakpoints: {
+                    768: { slidesPerView: 4, spaceBetween: 20 }, // Desktop: 4 images
+                },
+            });
+        });
+
+        document.getElementById("followBtn").addEventListener("click", function () {
+            window.open("https://www.instagram.com/swiggershots/?hl=en", "_blank");
+        });
 
 
     </script>
