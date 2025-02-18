@@ -90,8 +90,8 @@
             </div>
 
 
-            <button class="about_us_right_side_sub_sec_btn explore_btn" style="width: 370px;"> Chug our
-                flavours</button>
+            <button class="about_us_right_side_sub_sec_btn explore_btn" style="width: 370px;"> Chug Our
+                Flavours</button>
             <div class="hero_mobile_img_container">
                 <img class="hero_bottle" src="images/mobile_img1.png" alt="hero_bottle1">
 
@@ -301,7 +301,7 @@
 
 
                 </div>
-                <img src="images/testimonial_author.png" alt="img" class="testimonials_img">
+                <img src="images/testimonial_author.png" alt="img" class="testimonials_img" id="testimonialAuthorImg">
             </div>
             <div class="testimonials_line"></div>
         </div>
@@ -352,14 +352,14 @@
     <div class="gallery-slider-container">
         <div class="swiper gallery-slider">
             <div class="swiper-wrapper">
-                <div class="swiper-slide"><img src="images/g1.png" alt="Gallery Image 1"></div>
-                <div class="swiper-slide"><img src="images/g2.png" alt="Gallery Image 2"></div>
-                <div class="swiper-slide"><img src="images/g3.png" alt="Gallery Image 3"></div>
-                <div class="swiper-slide"><img src="images/g4.png" alt="Gallery Image 4"></div>
-                <div class="swiper-slide"><img src="images/g1.png" alt="Gallery Image 5"></div>
-                <div class="swiper-slide"><img src="images/g2.png" alt="Gallery Image 6"></div>
-                <div class="swiper-slide"><img src="images/g3.png" alt="Gallery Image 3"></div>
-                <div class="swiper-slide"><img src="images/g4.png" alt="Gallery Image 4"></div>
+                <div class="swiper-slide"><img src="images/g1.jpg" alt="Gallery Image 1"></div>
+                <div class="swiper-slide"><img src="images/g2.jpg" alt="Gallery Image 2"></div>
+                <div class="swiper-slide"><img src="images/g3.jpg" alt="Gallery Image 3"></div>
+                <div class="swiper-slide"><img src="images/g4.jpg" alt="Gallery Image 4"></div>
+                <div class="swiper-slide"><img src="images/g5.jpg" alt="Gallery Image 5"></div>
+                <div class="swiper-slide"><img src="images/g6.jpg" alt="Gallery Image 6"></div>
+                <div class="swiper-slide"><img src="images/g7.jpg" alt="Gallery Image 3"></div>
+                <div class="swiper-slide"><img src="images/g8.jpg" alt="Gallery Image 4"></div>
             </div>
 
             <div class="swiper-pagination"></div>
@@ -435,6 +435,7 @@
 
         const tabImages = document.querySelectorAll('.testimonials_tab_img');
         const tabContents = document.querySelectorAll('.testimonials_tab_content');
+        const testimonialAuthorImg = document.getElementById('testimonialAuthorImg'); // Get the testimonial author image
         let currentIndex = 0;
 
         // Function to switch tabs
@@ -450,6 +451,15 @@
             tabImages[index].classList.add('active');
             tabImages[index].src = 'images/testimonial_tab_active.svg'; // Active image
             tabContents[index].style.display = 'block'; // Show content
+
+            // Change the testimonial author image based on the active tab
+            if (index === 0) {
+                testimonialAuthorImg.src = 'images/testimonial_author.png';
+            } else if (index === 1) {
+                testimonialAuthorImg.src = 'images/testimonial_author2.png';
+            } else if (index === 2) {
+                testimonialAuthorImg.src = 'images/testimonial_author3.png';
+            }
         };
 
         // Add click event listeners to tab images
